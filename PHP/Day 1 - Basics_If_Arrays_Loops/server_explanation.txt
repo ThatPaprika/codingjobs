@@ -1,0 +1,14 @@
+
+When you go to a page on your browser :
+1. You're making a request to the server
+2. The server will understand which page you want
+3. Server will give you back the page you want
+4. Browser will display the page
+
+--------
+
+When you go to a bar/restaurant and ask for a cocktail/food : 
+1. You're asking the waiter for your cocktail
+2. The waiter will look for your cocktail in the kitchen/bar
+3. The waiter will you give you back what you asked for
+4. Enjoy your drink.
