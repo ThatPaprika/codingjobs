@@ -1,0 +1,13 @@
+-- Resources - Exercises/Practice :
+
+Challenge yourself one line :
+    https://www.codewars.com/
+    https://www.coderbyte.com/ (algorithm, js...)
+    https://www.codingame.com/start
+
+
+-- Exercises : 
+    If you need more exercises (very simple to hard difficulty), don't be afraid to look online.
+    
+    I recommand the exercises on wf3 to review everything from the start. 
+    For example this link : https://www.w3schools.com/php/php_exercises.asp
