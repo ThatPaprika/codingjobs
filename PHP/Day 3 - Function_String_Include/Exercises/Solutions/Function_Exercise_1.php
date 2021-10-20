@@ -185,3 +185,19 @@ echo '<p style="font-weight: 900"> EXERCISE 7 </p>';
 	$x = $y // x = 10
 	$y = $z // y = 5
 */
+$myArray = [5, 7, 10, 6];
+var_dump(reverse($myArray));
+
+function reverse($array)
+{
+	$length = count($array) - 1;
+
+	// Swap the two values from both side of the array
+	for ($i = 0; $i < $length / 2; $i++) {
+		$temp = $array[$length - $i];
+		$array[$length - $i] = $array[$i];
+		$array[$i] = $temp;
+	}
+
+	return $array;
+}
