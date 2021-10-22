@@ -8,7 +8,7 @@ For this exercises, use union command.
 
 	- Collect all novels and all books from 2018
 
-	- Collect all the novels and all the films with the director.
+	- Collect all the novels and all the books with the author.
 
 	- Get the total price per author (books and novels combined).
 
