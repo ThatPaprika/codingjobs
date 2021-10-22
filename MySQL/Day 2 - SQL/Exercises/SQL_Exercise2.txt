@@ -10,6 +10,6 @@ For this exercises, use union command.
 
 	- Collect all the novels and all the films with the director.
 
-	- Get the number of views per director (books and novels combined).
+	- Get the total price per author (books and novels combined).
 
-	- Get the total view number for all books AND all novels (books and separate novels).
+	- Get the total price for all books AND all novels (books and novels seperated).
