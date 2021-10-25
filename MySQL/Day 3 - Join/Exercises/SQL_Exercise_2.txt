@@ -18,7 +18,6 @@ Part 3:
 	- Collect the 3 most viewed movies at the box office
 
 Part 4:
-	- For each movie, Retrieve its title, its year of release and the name of the director
 
 	- For each movie, get all the information about it and the name of the director
 
