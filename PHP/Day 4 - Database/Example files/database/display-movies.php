@@ -27,7 +27,7 @@ if ($conn) {
     // Loop through all movies and display title/date
     foreach ($movies as $movie) {
         echo 'Title : ' . $movie['title'] . '<br>';
-        echo 'Release date : ' . $movie['date_of_release'] . '<br>';
+        echo 'Views : ' . $movie['views'] . '<br>';
         echo '<hr>';
     }
 } else {
