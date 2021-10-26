@@ -46,8 +46,8 @@ mysqli_close($conn);
 
 
         <p>
-            <strong>Date :</strong>
-            <?php echo $movie['date_of_release']; ?>
+            <strong>Views :</strong>
+            <?php echo $movie['views']; ?>
         </p>
     <?php endforeach; ?>
 </body>
