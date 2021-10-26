@@ -58,6 +58,8 @@ mysqli_close($conn);
             <?php echo $movie['views']; ?>
         </p>
 
+        <a href="movie.php?id=<?= $movie['id'] ?>">Detail page</a>
+
     <?php endforeach; ?>
 </body>
 
