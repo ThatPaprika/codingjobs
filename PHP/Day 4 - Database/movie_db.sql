@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `movie_test`
+-- Base de données : `movie_db`
 --
-CREATE DATABASE IF NOT EXISTS `movie_test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `movie_test`;
+CREATE DATABASE IF NOT EXISTS `movie_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `movie_db`;
 
 -- --------------------------------------------------------
 
