@@ -12,6 +12,10 @@ if ($conn) {
     // 2. Prepare the query
     $query = 'SELECT * FROM movies';
 
+    if (isset($_POST['searchBtn'])) {
+        $query = 'SELECT * FROM movies WHERE title LIKE "%' . $_POST['searchBox'] . '%"';
+    }
+
     // 3. Executing the query (send the query to the DB)
     $results = mysqli_query($conn, $query);
 
@@ -40,6 +44,11 @@ mysqli_close($conn);
     <?php include_once 'nav.html'; ?>
 
     <h2>Movies list</h2>
+
+    <form method="POST">
+        <input type="text" name="searchBox" placeholder="Your search">
+        <input type="submit" name="searchBtn" value="Search">
+    </form>
 
     <?php foreach ($movies as $movie) : ?>
         <hr>
