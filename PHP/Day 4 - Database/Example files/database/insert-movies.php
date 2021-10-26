@@ -1,7 +1,8 @@
 <?php
 
 // 1. Connect to my DB
-$conn = mysqli_connect('localhost', 'root', '', 'movie_db');
+require_once 'database.php';
+$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
 // Did I connect successfully ? 
 if ($conn) {
