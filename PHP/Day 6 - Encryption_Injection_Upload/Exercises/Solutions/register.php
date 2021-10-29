@@ -52,7 +52,7 @@
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
             // Create variables for the query (easier to use)
-            $userName = $_POST['username'];
+            $userName = strip_tags(trim($_POST['username']));
 
             // 1. Connect to my DB
             $conn = mysqli_connect('localhost', 'root', '', 'movie_db');

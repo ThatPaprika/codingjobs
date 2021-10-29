@@ -41,7 +41,7 @@ session_start();
             $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
 
             // Easier for query
-            $mail = $_POST['email'];
+            $mail = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
             $query = "SELECT *
             FROM users
