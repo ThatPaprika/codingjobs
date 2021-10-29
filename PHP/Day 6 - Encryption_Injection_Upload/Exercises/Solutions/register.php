@@ -67,6 +67,10 @@
                 echo 'Successfully inserted in the DB';
             else
                 echo 'Problem inserting in the DB';
+        } else {
+            foreach ($errors as $errorMsg) {
+                echo $errorMsg . '<br>';
+            }
         }
     }
     ?>
