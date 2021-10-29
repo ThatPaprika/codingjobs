@@ -53,7 +53,7 @@ if (isset($_POST['submitBtn'])) {
 
 
         $destinationDir = 'uploads/';
-        $fileName =  $_FILES['myFile']['tmp_name'] . '.' . $extFoundInArray;
+        $fileName =  $_FILES['myFile']['name'];
         $destinationPath = $destinationDir . $fileName;
 
         // Try to move/save permanently the file

@@ -10,11 +10,13 @@
 
 <body>
     <h2>Register page</h2>
-    <form action="" method="post">
+    <form enctype="multipart/form-data" method="post">
         <input type="text" name="username" placeholder="Username"><br>
         <input type="email" name="email" placeholder="Email"><br>
         <input type="password" name="password" placeholder="Password"><br>
         <input type="password" name="cpassword" placeholder="Confirm Password"><br>
+
+        Profile image : <input type="file" name="myFile"><br>
 
         <input type="submit" name="registerBtn" value="Register">
     </form>
@@ -44,10 +46,33 @@
         else if ($_POST['password'] != $_POST['cpassword'])
             $errors['password'] = 'Passwords doesnt match<br>';
 
+        // File problem
+        if ($_FILES['myFile']['error'] != UPLOAD_ERR_OK)
+            $errors['file'] = 'Problem during upload. Make sure file is compatible.';
+        else {
+            $extFoundInArray = array_search($_FILES['myFile']['type'], array(
+                'jpg' => 'image/jpeg',
+                'png' => 'image/png',
+                'gif' => 'image/gif'
+            ));
 
+            if ($extFoundInArray == false)
+                $errors['file'] = 'File must be image !';
+        }
 
         // Insert only if no errors
         if (empty($errors)) {
+            // First, handle the upload file
+
+            // Rename the file
+            $destinationDir = 'uploads/';
+            $fileName = $shaFile . $nbFile . '.' . $extFoundInArray;
+            $destinationPath = $destinationDir . $fileName;
+
+            // Try to move/save permanently the file
+            if (!move_uploaded_file($_FILES['myFile']['tmp_name'], $destinationPath))
+                echo 'Error during upload. Try to edit profile picture later.';
+
             // password must be hashed
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
