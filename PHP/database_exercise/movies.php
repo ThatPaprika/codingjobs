@@ -19,11 +19,26 @@ if (isset($_POST['cartBtn'])) {
         $_SESSION['cart'] = array();
     }
 
-    // Add this product to the cart (session)
-    $_SESSION['cart'][] = array(
-        'id' => $movie['id'],
-        'title' => $movie['title']
-    );
+    // Check if product already in cart
+    $pos = -1;
+    foreach ($_SESSION['cart'] as $key => $movie_in_cart) {
+        if ($movie_in_cart['id'] == $_POST['movie_id']) {
+            $pos = $key;
+            break;
+        }
+    }
+
+    if ($pos == -1) {
+        // Add this product to the cart for the first time
+        $_SESSION['cart'][] = array(
+            'id' => $movie['id'],
+            'title' => $movie['title'],
+            'quantity' => 1
+        );
+    } else {
+        // Update quantity
+        $_SESSION['cart'][$pos]['quantity']++;
+    }
 }
 
 // Initialize empty movies array
