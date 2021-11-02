@@ -4,7 +4,7 @@
 $movies = array();
 
 // 1. Connect to my DB
-$conn = mysqli_connect('localhost', 'root', '', 'movie_test');
+$conn = mysqli_connect('localhost', 'root', '', 'movie_db');
 
 // Did I connect successfully ? 
 if ($conn) {
