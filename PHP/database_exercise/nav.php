@@ -15,5 +15,8 @@
     <li>
       <a href="account.php">Account page</a>
     </li>
+    <li>
+      Amount : <?= $amount; ?>
+    </li>
   </ul>
 </nav>

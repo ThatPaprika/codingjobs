@@ -41,6 +41,11 @@ if (isset($_POST['cartBtn'])) {
     }
 }
 
+// Check for the amount of movies in my cart
+$amount = 0;
+if (isset($_SESSION['cart']) && !empty($_SESSION['cart']))
+    $amount = count($_SESSION['cart']);
+
 // Initialize empty movies array
 $movies = array();
 
