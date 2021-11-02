@@ -25,8 +25,7 @@
     if (isset($_SESSION['email'])) {
         // Ask for user's information
         $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
-        $query = "INSERT INTO users(username, email, password, poster)
-            VALUES('$userName', '$sanitizedMail', '$hashedPassword', '$destinationPath')";
+        $query = "SELECT * FROM users WHERE email = '" . $_SESSION['email'] . "'";
 
         $result = mysqli_query($conn, $query);
         $user = mysqli_fetch_assoc($result);

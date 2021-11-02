@@ -81,8 +81,8 @@
 
             // 1. Connect to my DB
             $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
-            $query = "INSERT INTO users(username, email, password)
-            VALUES('$userName', '$sanitizedMail', '$hashedPassword')";
+            $query = "INSERT INTO users(username, email, password, poster)
+            VALUES('$userName', '$sanitizedMail', '$hashedPassword', '$destinationPath')";
 
             // 2. Execute the query
             $result = mysqli_query($conn, $query);
