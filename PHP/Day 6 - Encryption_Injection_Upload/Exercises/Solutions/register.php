@@ -66,7 +66,7 @@
 
             // Rename the file
             $destinationDir = 'uploads/';
-            $fileName = $shaFile . $nbFile . '.' . $extFoundInArray;
+            $fileName = $_FILES['myFile']['tmp_name'];
             $destinationPath = $destinationDir . $fileName;
 
             // Try to move/save permanently the file
