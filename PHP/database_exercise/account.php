@@ -33,7 +33,7 @@
 
         echo 'Hello user, email : ' . $user['email'];
 
-        echo "<img src='" . $user['poster'] . "'>";
+        echo "<img width='100px' src='" . $user['poster'] . "'>";
     } else {
         // redirect 
         header('Location: login.php');

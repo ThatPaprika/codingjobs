@@ -68,9 +68,9 @@
 
             // Rename the file
             $destinationDir = 'uploads/';
-            $fileName = $_FILES['myFile']['tmp_name'];
+            $fileName = $_FILES['myFile']['name'];
             $destinationPath = $destinationDir . $fileName;
-
+            var_dump($destinationPath);
             // Try to move/save permanently the file
             if (!move_uploaded_file($_FILES['myFile']['tmp_name'], $destinationPath))
                 echo 'Error during upload. Try to edit profile picture later.';
@@ -83,8 +83,8 @@
 
             // 1. Connect to my DB
             $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
-            $query = "INSERT INTO users(username, email, password)
-            VALUES('$userName', '$sanitizedMail', '$hashedPassword')";
+            $query = "INSERT INTO users(username, email, password, poster)
+            VALUES('$userName', '$sanitizedMail', '$hashedPassword', '$destinationPath')";
 
             // 2. Execute the query
             $result = mysqli_query($conn, $query);

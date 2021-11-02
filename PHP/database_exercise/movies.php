@@ -84,6 +84,12 @@ mysqli_close($conn);
         </p>
 
         <a href="movie.php?id=<?= $movie['id'] ?>">Detail page</a>
+
+        <form method="post">
+            <input type="hidden" name="movie_id" value="<?= $movie['id']; ?>">
+            <input type="submit" name="cartBtn" value="Add to cart">
+        </form>
+
     <?php endforeach; ?>
 
 
