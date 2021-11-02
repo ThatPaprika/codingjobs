@@ -12,11 +12,12 @@
     <h2>Account page</h2>
     <?php
 
+    session_start();
+
     // Log out must be first (otherwise, you will still display user's information)
     if (isset($_POST['logoutBtn']))
         session_destroy();
 
-    session_start();
 
     /*
         Check if the user logged in before
