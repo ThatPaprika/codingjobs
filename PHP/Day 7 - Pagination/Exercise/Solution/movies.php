@@ -1,10 +1,33 @@
 <?php
 
+// Start session
+session_start();
+
+// Connect to db
+$conn = mysqli_connect('localhost', 'root', '', 'movie_db');
+
+// Click on 'add to cart' button
+if (isset($_POST['cartBtn'])) {
+
+    // Retrieve all informations about the product
+    $query = "SELECT * FROM movies WHERE id = " . $_POST['movie_id'];
+    $results = mysqli_query($conn, $query);
+    $movie = mysqli_fetch_assoc($results);
+
+    // Check if this is first time or not
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+
+    // Add this product to the cart (session)
+    $_SESSION['cart'][] = array(
+        'id' => $movie['id'],
+        'title' => $movie['title']
+    );
+}
+
 // Initialize empty movies array
 $movies = array();
-
-// 1. Connect to my DB
-$conn = mysqli_connect('localhost', 'root', '', 'movie_db');
 
 // Did I connect successfully ? 
 if ($conn) {
@@ -84,6 +107,12 @@ mysqli_close($conn);
         </p>
 
         <a href="movie.php?id=<?= $movie['id'] ?>">Detail page</a>
+
+        <form method="post">
+            <input type="hidden" name="movie_id" value="<?= $movie['id']; ?>">
+            <input type="submit" name="cartBtn" value="Add to cart">
+        </form>
+
     <?php endforeach; ?>
 
 
