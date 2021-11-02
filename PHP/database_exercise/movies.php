@@ -4,16 +4,25 @@
 $movies = array();
 
 // 1. Connect to my DB
-$conn = mysqli_connect('localhost', 'root', '', 'movie_db');
+$conn = mysqli_connect('localhost', 'root', '', 'movie_test');
 
 // Did I connect successfully ? 
 if ($conn) {
 
+    // RETRIVE THE CURRENT PAGE NUMBER
+    if (isset($_GET['page']))
+        $page = $_GET['page'];
+    else
+        $page = 1;
+
     // 2. Prepare the query
-    $query = 'SELECT * FROM movies';
+    // Click on the search btn
+    $limit = 2 * ($page - 1);
+    $query = "SELECT * FROM movies LIMIT $limit, 2";
 
     if (isset($_POST['searchBtn'])) {
-        $query = 'SELECT * FROM movies WHERE title LIKE "%' . $_POST['searchBox'] . '%"';
+        // Display search results
+        $query = 'SELECT * FROM movies WHERE title LIKE "%' . $_POST['searchbox'] . '%"';
     }
 
     // 3. Executing the query (send the query to the DB)
@@ -21,6 +30,13 @@ if ($conn) {
 
     // 4. Fetch the results in a associative array
     $movies = mysqli_fetch_all($results, MYSQLI_ASSOC);
+
+    // Count how many pages
+    $query = "SELECT COUNT(*) as total_movies FROM movies";
+    $result = mysqli_query($conn, $query);
+    $res = mysqli_fetch_assoc($result);
+
+    $total_pages = $res['total_movies'] / 2;
 } else {
     echo 'Pb with connection !';
 }
@@ -46,7 +62,7 @@ mysqli_close($conn);
     <h2>Movies list</h2>
 
     <form method="POST">
-        <input type="text" name="searchBox" placeholder="Your search">
+        <input type="text" name="searchbox" placeholder="Your search">
         <input type="submit" name="searchBtn" value="Search">
     </form>
 
@@ -68,8 +84,28 @@ mysqli_close($conn);
         </p>
 
         <a href="movie.php?id=<?= $movie['id'] ?>">Detail page</a>
-
     <?php endforeach; ?>
+
+
+    <div class="pagination">
+        <?php
+        // PREVIOUS / NEXT BUTTONS
+
+        // Only display previous if not on the first page
+        if ($page > 1) {
+            $previousPage = $page - 1;
+            echo "<a href='movies.php?page=$previousPage'>Previous</a>";
+        }
+
+        // Only display if not on the last page
+        if ($page < $total_pages) {
+            $nextPage = $page + 1;
+            echo "<a href='movies.php?page=$nextPage'>Next</a>";
+        }
+
+        ?>
+
+    </div>
 </body>
 
 </html>
