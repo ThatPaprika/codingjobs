@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <?php require_once 'nav.html' ?>
+
     <h2>Register page</h2>
     <form enctype="multipart/form-data" method="post">
         <input type="text" name="username" placeholder="Username"><br>

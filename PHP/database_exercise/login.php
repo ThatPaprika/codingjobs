@@ -15,6 +15,9 @@ session_start();
 </head>
 
 <body>
+
+    <?php require_once 'nav.html' ?>
+
     <form action="" method="post">
         <input type="email" name="email" placeholder="Email address"><br>
         <input type="password" name="password" placeholder="Enter password"><br>
