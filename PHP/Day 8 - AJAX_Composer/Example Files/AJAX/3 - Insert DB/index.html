@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+</head>
+<body>
+
+    <form action="" method="post">
+        <input type="text" name="username"><br>
+        <input type="text" name="mail"><br>
+        <input type="password" name="password"><br>
+
+        <input type="submit" value="Add user">
+    </form>
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+  <script>
+      /* Wait for the page to be loaded/ready */
+      $(function(){
+        $('form').submit(function(e) {
+            e.preventDefault();
+            
+            // Ajax call
+            $.ajax({
+               url: 'insert.php' ,
+               method: 'post',
+               data: $("form").serialize(),
+            })
+            .done(function (result) {
+                // If AJAX call worked
+                console.log(result);
+            })
+            .fail(function (result) {
+                // Fail means : file not found, 500 errors.
+                // Fail doesnt mean : problem with query, syntax error in php
+                console.log('AJAX FAILED');
+            })
+        });
+      });
+
+  </script>
+</body>
+</html>

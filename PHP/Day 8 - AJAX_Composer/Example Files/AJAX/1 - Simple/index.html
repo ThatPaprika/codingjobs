@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+</head>
+<body>
+
+    <div id="result"></div>
+
+    <form action="" method="post">
+        <input type="submit" id="myBtn" value="Click me">
+    </form>
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+  <script>
+      /* Wait for the page to be loaded/ready */
+       
+        $('#myBtn').click(function(e) {
+            e.preventDefault();
+            
+            // Ajax call : ask a php file for something
+            $.ajax({
+               url: 'simple.php' ,
+               method: 'post',
+            })
+            .done(function (result) {
+                //Everything that you display/echo/write down in the 'simple.php' file will be send back here in the 'result' variable
+                
+                // If AJAX call worked
+                //console.log(result);
+                $('#result').html(result);
+            })
+            .fail(function (result) {
+                // Fail means : file not found, 500 errors.
+                // Fail doesnt mean : problem with query, syntax error in php
+                console.log('AJAX FAILED');
+            })
+        });
+      });
+
+  </script>
+</body>
+</html>
