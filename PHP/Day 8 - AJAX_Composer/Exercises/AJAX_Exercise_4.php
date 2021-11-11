@@ -6,9 +6,9 @@
 
 	In this exercise, you will use the 'movie_db' database.
 
-	- Step 1 : Create two pages: 'update-form.html' and 'update-movie.php'
+	- Step 1 : Create two pages: 'update-form.php' and 'update-movie.php'
 	
-	- Step 2 : 'update-form.html' should expect an id in the URL.
+	- Step 2 : 'update-form.php' should expect an id in the URL.
 	Use GET Method.
 	The page should contain a form to update a movie.
 	
