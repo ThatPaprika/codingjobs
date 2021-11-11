@@ -15,7 +15,5 @@
 	- Step 3 : When loading the page, look for movie's information and load it into the form.
 	
 	- Step 4 : When you submit the form, create an AJAX call on 'update-movie.php' to update the movie.
-	
-
 
 */
