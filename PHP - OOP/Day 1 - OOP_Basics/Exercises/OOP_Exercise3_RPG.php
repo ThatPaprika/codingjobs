@@ -55,7 +55,7 @@
 	For now, the character can hold only one equipment at a time.
 	You can add/remove/display the equipment for a character (create a method for each action)
 
-	-- Step 5 - 30 min :
+	-- Step 5 - BONUUSSSS - 30 min :
 
 	A character can now hold many equipments.
 	It's actually an 'inventory' of equipments.
