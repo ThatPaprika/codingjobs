@@ -8,6 +8,7 @@ class Character
   private $defPoints;
   private $warCry;
   private $race;
+  private $equipment;
 
   public function __construct($race, $name)
   {
@@ -20,5 +21,20 @@ class Character
 
     if ($race == 'Orc')
       $this->warCry = 'wwouogrouroulou mlll !!';
+  }
+
+  public function add_equipment($equipment)
+  {
+    $this->equipment = $equipment;
+  }
+
+  public function remove_equipment()
+  {
+    $this->equipment = null;
+  }
+
+  public function display_equipment()
+  {
+    echo $this->equipment;
   }
 }
