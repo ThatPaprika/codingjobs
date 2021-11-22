@@ -19,4 +19,17 @@ class FlowerManager
 
         return $flowers;
     }
+
+    public function find($id)
+    {
+        $prep = $this->pdo->prepare('SELECT * FROM flowers WHERE id = ?');
+        $prep->setFetchMode(PDO::FETCH_CLASS, 'Flower');
+        $prep->bindValue(1, $id);
+        $prep->execute();
+
+        $flower = $prep->fetch();
+        $pdo = null;
+
+        return $flower;
+    }
 }

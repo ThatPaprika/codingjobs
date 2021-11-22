@@ -18,7 +18,9 @@
 
     foreach ($flowers as $flower) {
         echo 'Name : ' . $flower->get_name() . '<br>';
-        echo 'Price : ' . $flower->get_price() . '<hr>';
+        echo 'Price : ' . $flower->get_price() . '<br>';
+        echo '<a href="flower-details.php?id=' . $flower->get_id() . '">Detail page</a>';
+        echo '<hr>';
     }
     ?>
 
