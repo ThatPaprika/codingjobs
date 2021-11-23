@@ -1,0 +1,12 @@
+-- Resources - Exercises/Practice :
+
+Challenge yourself one line :
+    https://www.coderbyte.com/
+    https://www.codingame.com/start
+    https://www.codewars.com/
+
+
+-- Ajax tutorials : 
+    https://www.codementor.io/@sheena/ajax-tutorial-web-development-du107rzaq 
+
+    (really well explained and it's a series of videos, so watch em one by one!) : https://www.youtube.com/watch?v=tNKD0kfel6o
