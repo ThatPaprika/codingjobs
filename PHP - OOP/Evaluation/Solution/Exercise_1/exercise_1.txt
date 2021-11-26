@@ -1,0 +1,13 @@
+SELECT c.type, c.manufacturor, c.horsepower, d.firstname, d.lastname, d.age
+FROM car c
+INNER JOIN driver d ON d.id = c.driver_id
+
+----
+
+SELECT c.type, c.manufacturor, c.horsepower, d.firstname, d.lastname, d.age
+FROM car c
+INNER JOIN driver d ON d.id = c.driver_id
+UNION
+SELECT t.type, t.manufacturor, t.horsepower, d.firstname, d.lastname, d.age
+FROM truck t
+INNER JOIN driver d ON d.id = t.driver_id
