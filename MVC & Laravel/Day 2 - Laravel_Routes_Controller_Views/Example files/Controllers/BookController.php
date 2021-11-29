@@ -37,6 +37,9 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        // $request is the request coming from the form
+        // $request contains all form data
+        $result = DB::insert('INSERT INTO books(title) VALUES(?)', [$request->title]);
         return 'Save the book in the DB';
     }
 
@@ -71,6 +74,7 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $result = DB::update('UPDATE books SET title = ? WHERE id = ?', [$request->title, $id]);
         return 'Update in the DB';
     }
 
@@ -82,6 +86,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
+        DB::delete('DELETE FROM books WHERE id = ?', [$id]);
         return 'Delete book with id : ' . $id;
     }
 }
