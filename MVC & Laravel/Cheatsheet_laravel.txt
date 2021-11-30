@@ -1,0 +1,17 @@
+Run the server : php artisan serve
+
+- Controllers : 
+    php artisan make:controller BookController
+    php artisan make:controller BookController -- resources
+
+- Migrations : 
+    Create a migration => php artisan make:migration create_books_table
+    Run migrations => php artisan migrate
+    Rollback migrations => php artisan migrate:rollback
+    Rollback + Migrate => php artisan migrate:refresh
+    Delete all tables + Migrate => php artisan migrate:fresh
+
+- Seeders : 
+    Create a seeder : php artisan make:seeder BookSeeder
+    Run seeders : php artisan db:seed
+    Migrate + Seed : php artisan migrate --seed
