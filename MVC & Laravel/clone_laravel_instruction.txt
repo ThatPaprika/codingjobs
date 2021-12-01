@@ -1,0 +1,13 @@
+1. Copy the Laravel project in a folder.
+
+2. Open terminal inside the folder and type in : 'composer install'
+This will install all files ignored by git.
+
+3. Copy .env.example and rename it .env
+Make sure .env is well configured
+
+4. php artisan serve
+
+5. Go to localhost:8000
+It might ask you to 'regenerate the key'.
+Click on the big button.
