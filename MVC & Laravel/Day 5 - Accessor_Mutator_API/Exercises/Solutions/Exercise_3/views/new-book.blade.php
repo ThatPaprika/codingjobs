@@ -1,0 +1,39 @@
+@extends('mytemplate')
+
+@section('title', 'Inserting a book')
+
+@section('content')
+
+    @if ($message = Session::get('success'))
+        <p style="color:green">{{ $message }}</p>
+    @endif
+
+    @if ($message = Session::get('error'))
+        <p style="color:red">{{ $message }}</p>
+    @endif
+
+
+
+    {{-- Comment using blade --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form method="POST">
+        @csrf
+        <input type="text" name="title" placeholder="Title"><br>
+        <input type="text" name="price" placeholder="Price"><br>
+        <input type="number" name="author_id" placeholder="Author id"><br>
+        <select name="type">
+            <option value="thriller">Thriller</option>
+            <option value="fantasy">Fantasy</option>
+        </select><br>
+        <input type="submit" value="Insert a new book">
+    </form>
+@endsection
