@@ -20,4 +20,15 @@ Run the server : php artisan serve
     Create a model : php artisan make:model Book
 
 - Middleware :
-    Create a middleware : php artisan make:middleware EnsureUserIsLoggedIn
+    Create a middleware : php artisan make:middleware EnsureUserIsLoggedIn+
+
+- Auth (follow these command step by step to install Auth) :
+    (laravel new myProject
+    cd myProject) not mandatory if the project already exists
+    
+    php artisan migrate
+    composer install laravel/breeze
+    php artisan breeze:install
+    npm install
+    npm run dev
+    php artisan serve
