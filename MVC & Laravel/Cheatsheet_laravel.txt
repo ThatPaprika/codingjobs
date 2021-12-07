@@ -15,3 +15,9 @@ Run the server : php artisan serve
     Create a seeder : php artisan make:seeder BookSeeder
     Run seeders : php artisan db:seed
     Migrate + Seed : php artisan migrate --seed
+
+- Models : 
+    Create a model : php artisan make:model Book
+
+- Middleware :
+    Create a middleware : php artisan make:middleware EnsureUserIsLoggedIn
